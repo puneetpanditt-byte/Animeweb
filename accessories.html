@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN | Accessory Augmentation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl border-b border-primary/30">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="shop.html">Artifacts</a>
+                <a class="font-label-mono text-sm text-primary border-b-2 border-primary" href="accessories.html">Accessories</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="about.html">Mission</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="login.html">Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <div class="mb-16">
+            <span class="font-label-mono text-xs text-secondary-fixed tracking-[0.3em] uppercase mb-4 block">Category: AUGMENT</span>
+            <h1 class="font-display-xl text-6xl uppercase tracking-tighter">ACCESSORY HUB</h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl mt-4">Essential augmentations for your daily traversal. Tools for encryption, neural stability, and tactical advantage.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAskyE_90YaYoIrRCJYj_Y1vv_XQz9_YklDpy0YXYYDD5qhwmcSC71daa7_ZJaKXQNHgmcetqpTFOA2TAMcV1nDH4rk8wouH6PC_cbMsLWU9IM1Cc7rdeXqcbdUHR7e-Im9JrO1c51Pk1KgJ6XbOpD1001-wTw9NkgIHMI5UPKLX757qxy3yuMMb0ZLCUYGnFYEIauoSeAjZcVJbhzBeQNT5hnVzLqPXAHUNUVYS2XaVOYnA8JAU-LiOhE98afkAPv_jZLKLB8-2Tv" alt="Tactical Visor"/>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-headline-md text-xl uppercase tracking-tight group-hover:text-primary transition-colors">Tactical Visor</h3>
+                        <span class="font-label-mono text-secondary-fixed text-sm">₹980</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mb-6">Integrated HUD with thermal and digital signal decryption.</p>
+                    <a href="product.html" class="w-full py-4 bg-primary text-background font-label-mono text-xs uppercase tracking-widest text-center block hover:scale-105 transition-transform">Augment</a>
+                </div>
+            </div>
+            <!-- More Accessories... -->
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-12 border-t border-surface-variant text-center">
+        <div class="font-label-mono text-[10px] opacity-50 uppercase">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>

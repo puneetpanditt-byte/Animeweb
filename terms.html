@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | NEO-SHOGUN</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ffb3af",
+                    "surface": "#131314",
+                    "background": "#131314",
+                    "on-surface": "#e5e2e3",
+                    "secondary-fixed": "#7df4ff",
+                    "surface-container": "#201f20"
+            },
+            "fontFamily": {
+                    "label-mono": ["Space Mono"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+
+    <nav class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 py-4">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <a href="index.html" class="font-label-mono text-sm hover:text-primary transition-colors uppercase tracking-widest">Return to Base</a>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-20">
+        <div class="glass-panel p-10 border-l-4 border-secondary-fixed">
+            <span class="font-label-mono text-primary tracking-[0.3em] uppercase mb-4 block">Binding Agreement</span>
+            <h1 class="font-display-xl text-5xl mb-8">TERMS OF SERVICE</h1>
+            
+            <div class="space-y-8 text-on-surface-variant/80 leading-relaxed">
+                <section>
+                    <h2 class="text-secondary-fixed font-headline-md text-xl mb-4 uppercase">1. Network Access</h2>
+                    <p>By accessing the NEO-SHOGUN network, you agree to comply with all regional digital laws. Any attempt to breach the firewall will result in permanent blacklisting.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-secondary-fixed font-headline-md text-xl mb-4 uppercase">2. Artifact Ownership</h2>
+                    <p>All physical artifacts remain the property of the Vanguard until full credit transfer is verified. Digital artifacts are licensed for personal augmentation only.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-secondary-fixed font-headline-md text-xl mb-4 uppercase">3. Credit Transfers</h2>
+                    <p>All transactions are final. Once credits have been transferred through the neural link, reversals are impossible due to blockchain finality.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-secondary-fixed font-headline-md text-xl mb-4 uppercase">4. Code of Conduct</h2>
+                    <p>Harassment of other warriors in the network is strictly prohibited. We maintain a zero-tolerance policy for toxicity in the digital frontier.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-12 opacity-50 font-label-mono text-[10px] uppercase">
+        © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

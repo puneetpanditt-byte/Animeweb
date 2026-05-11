@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN | Warrior Profile</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl border-b border-primary/30">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="shop.html">Artifacts</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="about.html">Mission</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="support.html">Support</a>
+                <a class="font-label-mono text-sm text-primary" href="profile.html">Identity</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row gap-12">
+            <!-- Avatar & Stats -->
+            <div class="md:w-1/3">
+                <div class="glass-panel p-6 text-center border-b-2 border-primary">
+                    <div class="w-32 h-32 mx-auto rounded-full border-2 border-primary p-1 mb-6">
+                        <img class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAue8oLXcYI5gTxRr-Ez_vMm8Fc275QjbHDHAGxSuEqo22T41AtrbGvVPQSq8R-_CgC4rtFXbN4jXBszVBw-b6-y9c-3gbauwYxtBhIF-TFinWcpcUyCnAZLWtng4leuZ9Df2p_sUw7LQ7whbLDbimcPmsMuIJSVxDCNk0s97aj_4zfDEN4ECuy5T-sk6QVbsDTbHv7LsI4u8otttkP0QXWlvpuHBLTyecZQDHlS0p5D9WMS0YFH-HkQUwrIby47IboP2H12-yQ--H"/>
+                    </div>
+                    <h2 class="font-headline-md text-xl uppercase tracking-widest mb-2">PUNEET_KUMAR</h2>
+                    <p class="font-label-mono text-[10px] text-secondary-fixed mb-6 uppercase tracking-[0.2em]">Rank: S-Class Infiltrator</p>
+                    <div class="grid grid-cols-2 gap-4 py-4 border-t border-surface-variant">
+                        <div>
+                            <p class="font-label-mono text-[10px] opacity-50 uppercase">Credits</p>
+                            <p class="text-primary font-headline-md">₹14.5k</p>
+                        </div>
+                        <div>
+                            <p class="font-label-mono text-[10px] opacity-50 uppercase">Artifacts</p>
+                            <p class="text-secondary-fixed font-headline-md">12</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vault/Inventory -->
+            <div class="md:w-2/3">
+                <h2 class="font-display-xl text-4xl mb-8 uppercase tracking-tighter">Your Vault</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-panel p-4 flex items-center gap-4 border-l-4 border-primary">
+                        <span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+                        <div>
+                            <p class="font-label-mono text-xs uppercase">Oni-Link Mk.IV</p>
+                            <p class="text-[10px] opacity-50 uppercase">Synchronized</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-4 flex items-center gap-4 border-l-4 border-secondary-fixed">
+                        <span class="material-symbols-outlined text-secondary-fixed text-3xl">shield</span>
+                        <div>
+                            <p class="font-label-mono text-xs uppercase">Carbon Plating</p>
+                            <p class="text-[10px] opacity-50 uppercase">Active Buffer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-12 border-t border-surface-variant text-center">
+        <div class="font-label-mono text-[10px] opacity-50 uppercase">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Support | NEO-SHOGUN</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#ffb3af",
+                    "surface": "#131314",
+                    "background": "#131314",
+                    "on-surface": "#e5e2e3",
+                    "secondary-fixed": "#7df4ff",
+                    "surface-container": "#201f20"
+            },
+            "fontFamily": {
+                    "label-mono": ["Space Mono"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+
+    <nav class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 py-4">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <a href="index.html" class="font-label-mono text-sm hover:text-primary transition-colors uppercase tracking-widest">Return to Base</a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row gap-12">
+            <!-- Support Intro -->
+            <div class="md:w-1/3">
+                <h1 class="font-display-xl text-5xl mb-6 leading-none">NEURAL SUPPORT</h1>
+                <p class="text-on-surface-variant/70 mb-8 leading-relaxed">Our technicians are available 24/7 to resolve neural link issues, artifact synchronization errors, and credit transfer disputes.</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-secondary-fixed">
+                        <span class="material-symbols-outlined">headset_mic</span>
+                        <span class="font-label-mono text-xs uppercase">Direct Link Available</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-primary">
+                        <span class="material-symbols-outlined">mail</span>
+                        <span class="font-label-mono text-xs uppercase">support@neo-shogun.ai</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Form -->
+            <div class="md:w-2/3 glass-panel p-8">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="font-label-mono text-[10px] text-primary uppercase block mb-2">Warrior Alias</label>
+                            <input type="text" class="w-full bg-surface-container border-b border-surface-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                        <div>
+                            <label class="font-label-mono text-[10px] text-primary uppercase block mb-2">Neural Email</label>
+                            <input type="email" class="w-full bg-surface-container border-b border-surface-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="font-label-mono text-[10px] text-primary uppercase block mb-2">Issue Category</label>
+                        <select class="w-full bg-surface-container border-b border-surface-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors appearance-none">
+                            <option>Sync Error</option>
+                            <option>Payment Protocol Failure</option>
+                            <option>Artifact Damage</option>
+                            <option>Other Intel Needed</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="font-label-mono text-[10px] text-primary uppercase block mb-2">Briefing Details</label>
+                        <textarea rows="5" class="w-full bg-surface-container border-b border-surface-variant text-on-surface p-3 focus:outline-none focus:border-primary transition-colors"></textarea>
+                    </div>
+                    <button class="w-full py-4 bg-[#FF0033] text-white font-label-mono uppercase tracking-widest neon-glow-red hover:scale-[1.02] transition-transform">
+                        TRANSMIT REQUEST
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-20">
+            <h2 class="font-headline-md text-3xl mb-10 text-center uppercase tracking-tight">Standard Protocols (FAQ)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-panel p-6 border-l-2 border-primary">
+                    <h3 class="text-primary font-headline-md text-lg mb-2 uppercase">How do I sync my artifact?</h3>
+                    <p class="text-xs opacity-70">Use the provided Shogun MK-IV interface cable or establish a Bluetooth 5.0 neural link. Ensure your firewall allows inbound traffic on port 8080.</p>
+                </div>
+                <div class="glass-panel p-6 border-l-2 border-secondary-fixed">
+                    <h3 class="text-secondary-fixed font-headline-md text-lg mb-2 uppercase">Where is my order?</h3>
+                    <p class="text-xs opacity-70">Check the <a href="dispatch.html" class="underline">Dispatch Status</a> page using your tracking ID. Delays may occur during magnetic storms.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-12 opacity-50 font-label-mono text-[10px] uppercase">
+        © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

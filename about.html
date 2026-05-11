@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN | Mission Protocol</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-primary/30">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="shop.html">Artifacts</a>
+                <a class="font-label-mono text-sm text-primary border-b-2 border-primary" href="about.html">Mission</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="support.html">Support</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="login.html">Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative">
+        <section class="relative h-[60vh] flex items-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCByxQRozr-sY8popIG5EwWj9BahQjPmW0vOkUfoMBXdBRLqQuujdhVJXWEo3pKyT8737aKrW6oZzbNASk0jGQNOwVYJu06X1I5Cq5s33UuD-RZ7V3aZzt3cJ-wZJpJWEXWQBHf7swb8vaF3LlL8hHzIeee4JUnbvQ9nGTeFsT-8ciT90gLmvGl2v3Af6RUoJFa210Qt8gZEe5EyyOuAi6JABOJiwYxirIRy4NR3uiPzBeLmA_d7mdH-oNE5ro1LGpctPhOsBbCLjVa"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+            </div>
+            <div class="relative z-10 px-6 max-w-7xl mx-auto w-full">
+                <div class="max-w-3xl">
+                    <span class="font-label-mono text-xs text-secondary-fixed mb-2 block uppercase tracking-[0.3em]">Sector 0: Origin</span>
+                    <h1 class="font-display-xl text-5xl text-primary mb-4">ARCHITECTS OF THE DIGITAL FRONTIER</h1>
+                    <p class="text-lg text-on-surface-variant max-w-xl">
+                        NEO-SHOGUN is more than a brand. It is a neural protocol for the vanguard—those who inhabit the intersection of high-end tech, street culture, and supernatural legacy.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-7 glass-panel p-8 rounded-xl relative overflow-hidden group">
+                    <span class="font-label-mono text-xs text-primary uppercase mb-4 block">Core Directive 01</span>
+                    <h2 class="font-headline-md text-3xl text-on-surface mb-4">THE MISSION</h2>
+                    <p class="text-on-surface-variant mb-8 leading-relaxed">
+                        To decentralize aesthetic dominance by forging high-utility artifacts that bridge the gap between physical reality and the digital dreamscape. We arm the digital ronin with gear that signifies status and technological superiority.
+                    </p>
+                    <div class="flex items-center gap-2 text-secondary-fixed">
+                        <span class="material-symbols-outlined">data_thresholding</span>
+                        <span class="font-label-mono text-xs">PROTOCOL ACTIVE</span>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-primary/10 border border-primary p-8 rounded-xl flex flex-col justify-between">
+                    <div>
+                        <span class="font-label-mono text-xs text-primary uppercase mb-4 block">Omni-Vision</span>
+                        <h2 class="font-headline-md text-2xl text-on-surface mb-4 uppercase">A World Redefined</h2>
+                        <p class="text-on-surface-variant">
+                            We envision a future where identity is fluid, technology is atmospheric, and the spirit of the Shogun guides every interaction in the metaverse.
+                        </p>
+                    </div>
+                    <button class="mt-8 self-start px-6 py-2 bg-primary text-background font-label-mono text-xs uppercase rounded hover:scale-105 transition-transform">
+                        Initialize Vision
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-surface-container/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="font-headline-md text-3xl text-primary text-center mb-16 uppercase tracking-widest">Evolution Timeline</h2>
+                <div class="space-y-12 relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-px h-full bg-primary/20"></div>
+                    <div class="flex items-center justify-between">
+                        <div class="w-[45%] text-right">
+                            <span class="font-label-mono text-xs text-secondary-fixed">2022.04.12</span>
+                            <h3 class="font-headline-md text-xl text-on-surface">GENESIS PROTOCOL</h3>
+                            <p class="text-xs opacity-60">First neural link established. The foundations are codified.</p>
+                        </div>
+                        <div class="w-4 h-4 bg-primary rounded-full relative z-10 neon-glow-red"></div>
+                        <div class="w-[45%]"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-12 border-t border-surface-variant text-center">
+        <div class="font-label-mono text-[10px] opacity-50 uppercase">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>

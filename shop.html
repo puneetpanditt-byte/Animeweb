@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN | Artifact Shop</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl sticky top-0 w-full z-50 border-b border-primary/30">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-mono text-sm text-primary border-b-2 border-primary" href="shop.html">Artifacts</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="about.html">Mission</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="support.html">Support</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary transition-colors" href="login.html">Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row gap-8">
+            <aside class="w-full md:w-64 flex-shrink-0">
+                <div class="glass-panel p-6 rounded-xl sticky top-24">
+                    <h2 class="font-headline-md text-lg text-primary mb-6 flex items-center gap-2 uppercase tracking-widest">
+                        <span class="material-symbols-outlined">filter_list</span> Filters
+                    </h2>
+                    <div class="space-y-8">
+                        <div>
+                            <label class="font-label-mono text-[10px] text-on-surface-variant uppercase mb-3 block">Category</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="checkbox" class="rounded-none border-primary bg-transparent text-primary focus:ring-0">
+                                    <span class="font-label-mono text-xs group-hover:text-primary transition-colors uppercase">Weaponry</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer group">
+                                    <input type="checkbox" checked class="rounded-none border-primary bg-transparent text-primary focus:ring-0">
+                                    <span class="font-label-mono text-xs text-primary uppercase">Armor Systems</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="flex-grow">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product Card 1 -->
+                    <div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+                        <div class="relative aspect-[4/5] overflow-hidden">
+                            <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PKRVdeHJY5MNyJ4IPZ32bgzGzwM4tKGlkrfQQc7Q52hkQpfCCZYvs5gDuXzGriNIoTVdy6Gw-8oTjUFG-5jkGUqapPQZAEQUmzyCk6o9mrJjiuIxSAKUrCAPusrIlnyjGo8PtHORqwQ8yYH5SyWkAaLBaopr4nusNaWNJWaE6M8EPg2VeDh7vUU9e69OArBiO7G8vr_VYw-d2zo-l0YAfvRCy9XhUdt1gH3owxlxvuGjDd8_Tv-Zy4PeTmKDSC37AV08aO3TWJQx" alt="Oni-Link Mk.IV"/>
+                            <div class="absolute top-4 right-4 bg-primary/20 backdrop-blur-md text-primary font-label-mono text-[10px] px-2 py-1 uppercase font-bold border border-primary/30">Legendary</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-lg uppercase tracking-tight group-hover:text-primary transition-colors">Oni-Link Mk.IV</h3>
+                                <span class="font-label-mono text-secondary-fixed text-sm">₹1,240</span>
+                            </div>
+                            <p class="text-xs text-on-surface-variant line-clamp-2 mb-2">Direct neural interface for advanced shogunate combat protocols.</p>
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="material-symbols-outlined text-[14px] text-secondary-fixed">local_shipping</span>
+                                <span class="font-label-mono text-[10px] text-secondary-fixed uppercase">FREE Delivery</span>
+                            </div>
+                            <a href="product.html" class="w-full py-3 border border-primary text-primary font-label-mono text-xs uppercase hover:bg-primary hover:text-background transition-all block text-center">View Artifact</a>
+                        </div>
+                    </div>
+                    <!-- More cards can go here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-12 border-t border-surface-variant text-center">
+        <div class="font-label-mono text-[10px] opacity-50 uppercase">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>

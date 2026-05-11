@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN // ADMIN COMMAND</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff",
+                        "surface-container": "#201f20",
+                        "surface-variant": "#353436"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl border-b border-primary/30 sticky top-0 z-50">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <div class="flex items-center gap-4">
+                <span class="font-label-mono text-[10px] text-primary uppercase hidden sm:block">Admin Session: Active</span>
+                <div class="w-8 h-8 rounded-full border border-primary/30 overflow-hidden">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3DnL_uwKzdPf9MDgeAMU-M7awvLIW9LXLTaWLJ3QDoOybPJMqVYmP53lHaC221-DBrreElUaGmph40UqYukHwmPzwRJih5eL8d8vnnwnFnOWS7BGy1VBOJWq93ZYS1Wbn1PVandyDfAOIPaGXGO26trjNjLhalKgz43BwFccKbSqrtI_Fu7fMT3l4Al4zWeg0HAcl6qVclRbzgQacIBus-LbRnPoZZ9S2mZSQrstwAbVkzdLdJMRJOEWb_uU6G0vbqsHl3U1tj6Eu" alt="Admin"/>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 border-r border-surface-variant/30 py-8 px-6">
+            <nav class="space-y-4">
+                <a href="#" class="flex items-center gap-3 p-3 bg-primary/10 text-primary border-l-2 border-primary rounded">
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <span class="font-label-mono text-xs uppercase">Command</span>
+                </a>
+                <a href="shop.html" class="flex items-center gap-3 p-3 text-on-surface-variant hover:bg-surface-variant transition-colors rounded">
+                    <span class="material-symbols-outlined">deployed_code</span>
+                    <span class="font-label-mono text-xs uppercase">Artifacts</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Dashboard Content -->
+        <section class="flex-1 p-8 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-panel p-6 rounded-xl border-b-2 border-primary">
+                    <p class="font-label-mono text-[10px] text-primary uppercase mb-2">Cycle Revenue</p>
+                    <p class="font-headline-md text-3xl">₹4.2M</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-2 border-secondary-fixed">
+                    <p class="font-label-mono text-[10px] text-secondary-fixed uppercase mb-2">Active Synced Users</p>
+                    <p class="font-headline-md text-3xl">18,204</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl border-b-2 border-[#FF0033]">
+                    <p class="font-label-mono text-[10px] text-[#FF0033] uppercase mb-2">Security Alerts</p>
+                    <p class="font-headline-md text-3xl">03</p>
+                </div>
+            </div>
+
+            <div class="glass-panel p-8 rounded-xl mb-12">
+                <h2 class="font-headline-md text-xl mb-8 uppercase tracking-widest">Recent Transmissions</h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="font-label-mono text-[10px] text-on-surface-variant uppercase border-b border-surface-variant/30">
+                                <th class="pb-4">Trace ID</th>
+                                <th class="pb-4">Artifact</th>
+                                <th class="pb-4">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-xs">
+                            <tr class="border-b border-surface-variant/10">
+                                <td class="py-4 font-label-mono text-primary">#NS-8821</td>
+                                <td class="py-4">Oni-Mask Mk.IV</td>
+                                <td class="py-4 text-secondary-fixed">Dispatched</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-12 opacity-50 font-label-mono text-[10px] uppercase">
+        © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+    </footer>
+</body>
+</html>

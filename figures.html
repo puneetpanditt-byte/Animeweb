@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>NEO-SHOGUN | Figure Collection</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "background": "#131314",
+                        "on-surface": "#e5e2e3",
+                        "secondary-fixed": "#7df4ff"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "headline-md": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-body-md text-on-surface bg-background">
+    <div class="particles-bg"></div>
+    <header class="bg-surface/80 backdrop-blur-xl border-b border-primary/30">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <a href="index.html" class="font-headline-md text-2xl font-bold tracking-tighter text-primary">NEO-SHOGUN</a>
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="shop.html">Artifacts</a>
+                <a class="font-label-mono text-sm text-primary border-b-2 border-primary" href="figures.html">Figures</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="about.html">Mission</a>
+                <a class="font-label-mono text-sm text-on-surface-variant hover:text-primary" href="login.html">Access</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <div class="mb-16">
+            <span class="font-label-mono text-xs text-secondary-fixed tracking-[0.3em] uppercase mb-4 block">Category: COLLECT</span>
+            <h1 class="font-display-xl text-6xl uppercase tracking-tighter">FIGURE VAULT</h1>
+            <p class="text-on-surface-variant text-lg max-w-2xl mt-4">Pristine anatomical artifacts of legendary warriors. Each figure is encoded with a unique neural signature.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Product 1 -->
+            <div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+                <div class="relative aspect-[4/5] overflow-hidden">
+                    <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AJBVZ7x3OqTx8zdu4H8XfJl46yKFF1j9_KunxKKcxRAtns7WUD6BxBbAqv7SoblLPvz0rFoN_G5mLu4EDLeWWpOrOzNERmX1PDShwlZGyvbeIGXpXyUPMRzsZi8HgWnfXIjACgXjbKXCdE0zvyZd37h4GUvj2rGNqaJYGgQGMKMZWKI9lUnnv8pd1T-MobC1h73SbDCdU01zxrjkHR6xs-eKv5qLZqJFYKzwPG7iVrxVEb63GMJtOr2IYzQkP1qQ-MmDNoQqT8Go" alt="Legendary Shogun"/>
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-headline-md text-xl uppercase tracking-tight group-hover:text-primary transition-colors">Ghost Visor MK-I</h3>
+                        <span class="font-label-mono text-secondary-fixed text-sm">₹12,000</span>
+                    </div>
+                    <p class="text-xs text-on-surface-variant mb-6">1/6 scale anatomical model with reactive LED sub-systems.</p>
+                    <a href="product.html" class="w-full py-4 bg-primary text-background font-label-mono text-xs uppercase tracking-widest text-center block hover:scale-105 transition-transform">Collect</a>
+                </div>
+            </div>
+            <!-- More Figures... -->
+        </div>
+    </main>
+
+    <footer class="bg-surface-container-lowest py-12 border-t border-surface-variant text-center">
+        <div class="font-label-mono text-[10px] opacity-50 uppercase">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>
