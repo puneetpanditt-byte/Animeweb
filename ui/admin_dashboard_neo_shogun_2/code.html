@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO-SHOGUN // ADMIN COMMAND</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Space+Mono:wght@400;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-container": "#480064",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "error-container": "#93000a",
+                        "primary-container": "#ff5357",
+                        "on-surface-variant": "#e9bcb9",
+                        "inverse-primary": "#bf0024",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-bright": "#3a393a",
+                        "on-primary": "#68000e",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "tertiary": "#ebb2ff",
+                        "on-background": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#002022",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "primary-fixed-dim": "#ffb3af",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5f3e3d",
+                        "on-tertiary": "#520071",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410006",
+                        "on-surface": "#e5e2e3",
+                        "surface-tint": "#ffb3af",
+                        "on-secondary-container": "#00686f",
+                        "secondary-fixed": "#7df4ff",
+                        "background": "#131314",
+                        "outline": "#b08784",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "secondary": "#d3fbff",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdad8",
+                        "on-primary-container": "#5c000b",
+                        "tertiary-container": "#ce5dff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#930019",
+                        "on-secondary": "#00363a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#00eefc",
+                        "on-tertiary-fixed": "#320047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-8": "32px",
+                        "unit-1": "4px",
+                        "base": "4px",
+                        "max-width": "1440px",
+                        "unit-2": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #050505; color: #e5e2e3; }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 179, 175, 0.3);
+        }
+        .neon-glow-red {
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.4), inset 0 0 5px rgba(255, 0, 51, 0.2);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 5px rgba(0, 240, 255, 0.2);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3) 51%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+        .hud-border {
+            position: relative;
+        }
+        .hud-border::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 10px; height: 10px;
+            border-top: 2px solid #ffb3af;
+            border-right: 2px solid #ffb3af;
+        }
+        .hud-border::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 10px; height: 10px;
+            border-bottom: 2px solid #ffb3af;
+            border-left: 2px solid #ffb3af;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit-4 max-w-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(255,179,175,0.6)]">
+                NEO-SHOGUN
+            </div>
+<nav class="hidden md:flex items-center gap-unit-8">
+<a class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-1" href="#">Artifacts</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Drops</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-unit-4">
+<button class="p-unit-2 text-primary hover:bg-surface-variant/50 transition-all duration-300 scale-95 active:scale-90 rounded-full">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<button class="p-unit-2 text-primary hover:bg-surface-variant/50 transition-all duration-300 scale-95 active:scale-90 rounded-full">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<div class="h-8 w-8 rounded-full border border-primary/30 overflow-hidden">
+<img alt="Admin Profile" data-alt="A futuristic digital avatar portrait of a cyberpunk hacker wearing high-tech red glowing goggles and an obsidian armor collar. The aesthetic is sharp and high-contrast, featuring a palette of deep blacks and vibrant neon reds. The lighting is cinematic, reflecting off the metallic surfaces of the gear, creating a sophisticated HUD-inspired command center feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3DnL_uwKzdPf9MDgeAMU-M7awvLIW9LXLTaWLJ3QDoOybPJMqVYmP53lHaC221-DBrreElUaGmph40UqYukHwmPzwRJih5eL8d8vnnwnFnOWS7BGy1VBOJWq93ZYS1Wbn1PVandyDfAOIPaGXGO26trjNjLhalKgz43BwFccKbSqrtI_Fu7fMT3l4Al4zWeg0HAcl6qVclRbzgQacIBus-LbRnPoZZ9S2mZSQrstwAbVkzdLdJMRJOEWb_uU6G0vbqsHl3U1tj6Eu"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex min-h-screen pt-4">
+<!-- Sidebar -->
+<aside class="hidden md:flex flex-col w-64 px-margin-desktop gap-unit-8 border-r border-surface-variant/30 py-unit-8">
+<div class="flex flex-col gap-unit-4">
+<span class="font-label-mono text-label-mono text-primary/50 uppercase tracking-widest px-2">Navigation</span>
+<a class="flex items-center gap-unit-2 p-2 rounded-lg bg-primary/10 text-primary border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-mono text-label-mono">COMMAND</span>
+</a>
+<a class="flex items-center gap-unit-2 p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="deployed_code">deployed_code</span>
+<span class="font-label-mono text-label-mono">ARTIFACTS</span>
+</a>
+<a class="flex items-center gap-unit-2 p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-mono text-label-mono">USERS</span>
+</a>
+<a class="flex items-center gap-unit-2 p-2 rounded-lg text-on-surface-variant hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
+<span class="font-label-mono text-label-mono">LOGISTICS</span>
+</a>
+</div>
+<div class="mt-auto glass-panel p-unit-4 rounded-xl hud-border">
+<div class="flex flex-col gap-unit-2">
+<span class="font-label-mono text-[10px] text-secondary-fixed">NEURAL LINK STATUS</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary-container animate-pulse shadow-[0_0_8px_#00eefc]"></div>
+<span class="font-label-mono text-label-mono">SECURE</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Content Area -->
+<section class="flex-1 px-margin-mobile md:px-margin-desktop py-unit-8 max-w-6xl">
+<!-- Pulse Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-unit-12">
+<!-- Real-time Sales -->
+<div class="glass-panel p-unit-8 rounded-xl relative overflow-hidden group">
+<div class="scanline absolute inset-0 opacity-10"></div>
+<div class="flex justify-between items-start mb-unit-4">
+<span class="font-label-mono text-label-mono text-primary uppercase">Real-time Sales</span>
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">₹4.2M</div>
+<div class="mt-unit-2 font-label-mono text-[10px] text-primary/70">+12.4% vs PREV CYCLE</div>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-primary/20">
+<div class="h-full bg-primary neon-glow-red w-3/4"></div>
+</div>
+</div>
+<!-- Active Users -->
+<div class="glass-panel p-unit-8 rounded-xl relative overflow-hidden">
+<div class="scanline absolute inset-0 opacity-10"></div>
+<div class="flex justify-between items-start mb-unit-4">
+<span class="font-label-mono text-label-mono text-secondary-fixed uppercase">Active Users</span>
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="group_work">group_work</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">18,204</div>
+<div class="mt-unit-2 font-label-mono text-[10px] text-secondary-fixed/70">892 SYNCED RIGHT NOW</div>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-secondary-fixed/20">
+<div class="h-full bg-secondary-fixed neon-glow-cyan w-1/2"></div>
+</div>
+</div>
+<!-- Inventory Alerts -->
+<div class="glass-panel p-unit-8 rounded-xl border-error/50 relative overflow-hidden bg-error/5">
+<div class="scanline absolute inset-0 opacity-10"></div>
+<div class="flex justify-between items-start mb-unit-4">
+<span class="font-label-mono text-label-mono text-error uppercase">Inventory Alerts</span>
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+</div>
+<div class="font-headline-lg text-headline-lg text-error">03</div>
+<div class="mt-unit-2 font-label-mono text-[10px] text-error/70">NEURAL CORES DEPLETING</div>
+</div>
+</div>
+<!-- Revenue Chart Area -->
+<div class="glass-panel p-unit-8 rounded-xl mb-unit-12 hud-border relative">
+<div class="flex justify-between items-center mb-unit-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-white tracking-tight">REVENUE STREAM</h2>
+<p class="font-label-mono text-label-mono text-on-surface-variant">CYBERNETIC PROFIT PROJECTIONS</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-1 font-label-mono text-[10px] bg-primary text-on-primary rounded">WEEKLY</button>
+<button class="px-4 py-1 font-label-mono text-[10px] border border-primary/30 hover:bg-primary/10 rounded">MONTHLY</button>
+</div>
+</div>
+<!-- Simulated Chart -->
+<div class="h-64 w-full relative flex items-end gap-1">
+<div class="absolute inset-0 border-l border-b border-surface-variant/50"></div>
+<!-- Chart Bars for visual impact -->
+<div class="flex-1 bg-primary/20 h-1/2 relative group hover:bg-primary/40 transition-all cursor-crosshair">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 font-label-mono text-[10px] text-primary">₹500k</div>
+</div>
+<div class="flex-1 bg-primary/20 h-3/4"></div>
+<div class="flex-1 bg-primary/20 h-2/3"></div>
+<div class="flex-1 bg-primary/40 h-5/6 border-t-2 border-primary neon-glow-red"></div>
+<div class="flex-1 bg-primary/20 h-1/2"></div>
+<div class="flex-1 bg-primary/20 h-2/3"></div>
+<div class="flex-1 bg-primary/20 h-4/5"></div>
+<div class="flex-1 bg-primary/20 h-1/3"></div>
+<div class="flex-1 bg-primary/20 h-1/2"></div>
+<div class="flex-1 bg-primary/20 h-3/4"></div>
+</div>
+</div>
+<!-- Recent Transmissions Table -->
+<div class="glass-panel rounded-xl overflow-hidden">
+<div class="p-unit-6 border-b border-surface-variant/30 flex justify-between items-center bg-surface-container-low/50">
+<h3 class="font-label-mono text-label-mono uppercase tracking-widest text-primary">Recent Transmissions</h3>
+<span class="material-symbols-outlined text-primary-container" data-icon="sensors">sensors</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/50 font-label-mono text-[10px] text-on-surface-variant uppercase tracking-tighter">
+<th class="p-unit-4 border-b border-surface-variant/30">Trace ID</th>
+<th class="p-unit-4 border-b border-surface-variant/30">Artifact</th>
+<th class="p-unit-4 border-b border-surface-variant/30">Recipient</th>
+<th class="p-unit-4 border-b border-surface-variant/30">Value</th>
+<th class="p-unit-4 border-b border-surface-variant/30">Status</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-sm">
+<tr class="hover:bg-surface-variant/20 transition-colors border-b border-surface-variant/10">
+<td class="p-unit-4 font-label-mono text-primary">#NS-8821</td>
+<td class="p-unit-4">Oni-Mask Mk.IV</td>
+<td class="p-unit-4 text-on-surface-variant">Zero-Cool</td>
+<td class="p-unit-4">₹12,400</td>
+<td class="p-unit-4">
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary-fixed font-label-mono text-[10px] rounded border border-secondary-fixed/30 neon-glow-cyan">Dispatched</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors border-b border-surface-variant/10">
+<td class="p-unit-4 font-label-mono text-primary">#NS-8819</td>
+<td class="p-unit-4">Katana Neural Link</td>
+<td class="p-unit-4 text-on-surface-variant">GhostInShell</td>
+<td class="p-unit-4">₹89,000</td>
+<td class="p-unit-4">
+<span class="px-2 py-1 bg-error-container/20 text-error font-label-mono text-[10px] rounded border border-error/30 neon-glow-red">Neural Error</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/20 transition-colors border-b border-surface-variant/10">
+<td class="p-unit-4 font-label-mono text-primary">#NS-8818</td>
+<td class="p-unit-4">Shogun Vestments</td>
+<td class="p-unit-4 text-on-surface-variant">NeoTokyo_2077</td>
+<td class="p-unit-4">₹45,200</td>
+<td class="p-unit-4">
+<span class="px-2 py-1 bg-secondary-container/20 text-secondary-fixed font-label-mono text-[10px] rounded border border-secondary-fixed/30">Dispatched</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full py-unit-12 bg-surface-container-lowest border-t border-surface-variant mt-unit-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-unit-8 max-w-max-width mx-auto">
+<div class="font-headline-md text-primary tracking-widest uppercase">
+                NEO-SHOGUN
+            </div>
+<div class="flex flex-wrap justify-center gap-unit-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Privacy Protocol</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Dispatch Status</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Neural Support</a>
+</div>
+<div class="font-label-mono text-[10px] text-on-surface-variant opacity-50">
+                © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell -->
+<nav class="flex justify-around items-center w-full h-unit-12 md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-secondary-fixed/20 shadow-[0_-4px_24px_rgba(0,238,252,0.15)]">
+<a class="flex flex-col items-center justify-center text-secondary-fixed drop-shadow-[0_0_5px_rgba(0,219,233,0.8)] active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-mono text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-mono text-[10px] uppercase">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-mono text-[10px] uppercase">Missions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-mono text-[10px] uppercase">Profile</span>
+</a>
+</nav>
+<!-- Visual Background Enhancements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 opacity-20">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[160px] opacity-20"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary-fixed rounded-full blur-[160px] opacity-10"></div>
+</div>
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO-SHOGUN | Artifact Shop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-container": "#480064",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "error-container": "#93000a",
+                        "primary-container": "#ff5357",
+                        "on-surface-variant": "#e9bcb9",
+                        "inverse-primary": "#bf0024",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-bright": "#3a393a",
+                        "on-primary": "#68000e",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "tertiary": "#ebb2ff",
+                        "on-background": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#002022",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "primary-fixed-dim": "#ffb3af",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5f3e3d",
+                        "on-tertiary": "#520071",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410006",
+                        "on-surface": "#e5e2e3",
+                        "surface-tint": "#ffb3af",
+                        "on-secondary-container": "#00686f",
+                        "secondary-fixed": "#7df4ff",
+                        "background": "#131314",
+                        "outline": "#b08784",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "secondary": "#d3fbff",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdad8",
+                        "on-primary-container": "#5c000b",
+                        "tertiary-container": "#ce5dff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#930019",
+                        "on-secondary": "#00363a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#00eefc",
+                        "on-tertiary-fixed": "#320047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-8": "32px",
+                        "unit-1": "4px",
+                        "base": "4px",
+                        "max-width": "1440px",
+                        "unit-2": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e3;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 179, 175, 0.2);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(255, 0, 51, 0.4), 0 0 30px rgba(255, 0, 51, 0.2);
+        }
+        .neon-glow-secondary {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), 0 0 30px rgba(0, 240, 255, 0.2);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.05) 50%);
+            background-size: 100% 4px;
+        }
+        .stepped-progress {
+            display: flex;
+            gap: 2px;
+        }
+        .step {
+            height: 4px;
+            width: 12px;
+            background: #00F0FF;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit-4 max-w-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(255,179,175,0.6)]">NEO-SHOGUN</div>
+<nav class="hidden md:flex items-center gap-unit-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Artifacts</a>
+<a class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-1" href="#">Collections</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Drops</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-unit-4">
+<div class="relative group hidden lg:block">
+<input class="bg-surface-container-lowest border-0 border-b border-secondary-fixed/50 focus:border-secondary-fixed focus:ring-0 text-label-mono font-label-mono px-4 py-2 w-64 transition-all duration-300 group-hover:neon-glow-secondary" placeholder="SEARCH ARCHIVES..." type="text"/>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-secondary-fixed">search</span>
+</div>
+<button class="material-symbols-outlined text-primary hover:bg-surface-variant/50 p-2 rounded-full transition-all">bolt</button>
+<button class="material-symbols-outlined text-primary hover:bg-surface-variant/50 p-2 rounded-full transition-all">shopping_bag</button>
+<button class="material-symbols-outlined text-primary hover:bg-surface-variant/50 p-2 rounded-full transition-all">person</button>
+</div>
+</div>
+</header>
+<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-unit-12">
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="glass-panel p-unit-8 rounded-xl sticky top-24">
+<h2 class="font-headline-md text-[20px] text-primary mb-unit-8 flex items-center gap-2">
+<span class="material-symbols-outlined">filter_list</span> FILTERS
+                    </h2>
+<div class="space-y-unit-8">
+<div>
+<label class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-4 block">Category</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-none border-secondary-fixed bg-transparent text-secondary-fixed focus:ring-0" type="checkbox"/>
+<span class="font-label-mono text-label-mono group-hover:text-secondary-fixed">WEAPONRY</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-none border-secondary-fixed bg-transparent text-secondary-fixed focus:ring-0" type="checkbox"/>
+<span class="font-label-mono text-label-mono text-secondary-fixed">ARMOR SYSTEMS</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-none border-secondary-fixed bg-transparent text-secondary-fixed focus:ring-0" type="checkbox"/>
+<span class="font-label-mono text-label-mono group-hover:text-secondary-fixed">NEURAL LINKS</span>
+</label>
+</div>
+</div>
+<div>
+<label class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-4 block">Price Range</label>
+<input class="w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-secondary-fixed neon-glow-secondary" type="range"/>
+<div class="flex justify-between mt-2 font-label-mono text-[10px] text-on-surface-variant">
+<span>0 NSG</span>
+<span>5000 NSG</span>
+</div>
+</div>
+<div>
+<label class="font-label-mono text-label-mono text-on-surface-variant uppercase mb-4 block">Rarity</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant/50 border border-outline px-2 py-1 font-label-mono text-[10px] cursor-pointer hover:border-primary transition-all">COMMON</span>
+<span class="bg-primary/20 border border-primary px-2 py-1 font-label-mono text-[10px] cursor-pointer text-primary">ELITE</span>
+<span class="bg-tertiary-container/30 border border-tertiary px-2 py-1 font-label-mono text-[10px] cursor-pointer text-tertiary">LEGENDARY</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-unit-8 py-3 bg-primary text-on-primary font-label-mono uppercase hover:neon-glow-primary active:scale-95 transition-all">
+                        Reset Signal
+                    </button>
+</div>
+</aside>
+<!-- Product Grid -->
+<section class="flex-grow">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A high-quality 3D render of a futuristic samurai helmet featuring glowing red optics and a matte black finish. The helmet is set against a dark, foggy background with subtle red sparks flying through the air. The lighting is dramatic, highlighting the sharp, aggressive angles of the armor. This cinematic tech aesthetic perfectly matches the dark obsidian and vibrant red palette of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-PKRVdeHJY5MNyJ4IPZ32bgzGzwM4tKGlkrfQQc7Q52hkQpfCCZYvs5gDuXzGriNIoTVdy6Gw-8oTjUFG-5jkGUqapPQZAEQUmzyCk6o9mrJjiuIxSAKUrCAPusrIlnyjGo8PtHORqwQ8yYH5SyWkAaLBaopr4nusNaWNJWaE6M8EPg2VeDh7vUU9e69OArBiO7G8vr_VYw-d2zo-l0YAfvRCy9XhUdt1gH3owxlxvuGjDd8_Tv-Zy4PeTmKDSC37AV08aO3TWJQx"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container font-label-mono text-[10px] px-2 py-1 uppercase font-bold">LEGENDARY</div>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
+<div class="stepped-progress">
+<div class="step"></div><div class="step"></div><div class="step"></div><div class="step opacity-30"></div>
+</div>
+</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Oni-Link Mk.IV</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">1,240 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Direct neural interface for advanced shogunate combat protocols. Features reactive cooling.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A detailed view of a high-tech robotic exoskeleton arm with exposed neon blue circuitry and hydraulic pistons. The metal surface is weathered and scarred, suggesting heavy use in a dystopian urban environment. The background is a soft-focus nighttime city with blurred neon lights. The overall mood is cold, mechanical, and technologically superior, aligning with the cyberpunk anime production style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDffOk1P6I4cheq3QVtXjufI8Hq9kwDtM0bRTTnAK6qj4ycE4T0IPxHuj-LftIqG8klqJlW4Dt5Fr5s0weVcG4ORP79a1g-y8OJfhjr9UVjrMdGBIIsOGjVbGG-0f46qyDwkNrcAWU_y9Jxb0zBXYHnxlRo6fSbhLJS5eL7bqHj8LYHaT1ZDVWa98tTu5s4N-StIuBG49Sz_w36FYg4o27WYP8kVFOaELW84qRBwtDQ9ohhTWf9lGsqoHcW0Jw7g5dpJYAyzkdokdz4"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-mono text-[10px] px-2 py-1 uppercase font-bold">ELITE</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Striker Bracers</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">850 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Hydraulic-assisted forearm plating for high-velocity kinetic engagement. Obsidian finish.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A minimalist tech accessory display featuring a glowing crystal core reactor floating above a sleek black charging pad. The room is dark, with intense blue light refracting through the crystal, casting sharp shadows and patterns across the matte black surfaces. The visual style is high-contrast and bold, emphasizing the supernatural vibrance of the energy source against an obsidian layer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSJGq6O13EvLIzJ8Qkz4EECtKKkVwo7MTGZp3uYgzjcE9IeMfKpM_D8bKxk30uz3W_V6JMOpD7mGb1Hr9oSxXoeXQujvLGzrxw3_BaSBDQrBNzU2yoDftJO9qWi5tVfrFiug7iTizUwr4eH3AKIqUxHhFL-QVXKu3yHea4zgPH4Sp4zVORvX98hNLLyJ8sKj81eyR8Mp3G0RPZLSJCXC74J64fO_Qk_7P0h139dyBjl_wNRqdfr1vCViuxi_FOMdqCyuJkbjhFK1zF"/>
+<div class="absolute top-4 right-4 bg-surface-variant border border-outline text-on-surface font-label-mono text-[10px] px-2 py-1 uppercase font-bold">COMMON</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Core Catalyst</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">320 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Standard issue energy cell for auxiliary gear components. High stability rating.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close-up of a high-tech katana hilt with embedded biometric sensors and a vibrant purple energy weave along the handle. The blade is partially visible, shimmering with a digital static effect. The setting is a technical workshop with hanging cables and soft floating particles like digital dust. The lighting is high-stakes and high-energy, typical of a premium cyberpunk anime artifact." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9BlHR376eveS-tgSlVr3b6dFy_VuGDw-1AaAB5HRbYR2_9LgHQxBYHnLx06CF-JuHnCZxOoaoKvNlgPOUcAM4kEfhPYS253RXvluAgt19JBcknZuXGQSVu5M_yICwyoq76kV4zKIULjGxlWtrt_esz7AZLRybXp4UHA-nA7XYJ4N2PoWHRoyPzzhUPINGPVaGwvWrilRDV4XpfIfXcvlkjkDI0Ql8ulpukC20xa217-JarZN64Y6cIdNnIS6wFbOFfVkV-REtDfAa"/>
+<div class="absolute top-4 right-4 bg-tertiary-container text-on-tertiary-container font-label-mono text-[10px] px-2 py-1 uppercase font-bold">LEGENDARY</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Plasma Katana</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">2,900 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Solid-state plasma edge with biometric lock. Guaranteed to slice through any standard composite.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="An intricate motherboard layout with glowing red and cyan trace lines that look like a futuristic city map. Small, glowing components pulse with light, creating a sense of living energy. The image has a scanline texture overlay, giving it a technical HUD feel. The palette is dominated by deep obsidian and vibrant neon accents, evoking the emotional response of technological superiority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJjLNYUVaRDdUBKe1gZoZRAJo9BdYQT7OJBi3D0Gdi_PiwZ5o3IFjgRMY7haVazaxbF1iSDsMXolwvJFSr0Y9yRWHJ1ma59jCsGph1-cNBc7gN25YXscHZGZbzB-NeuQOncvdQpIXliZrdOa5fbO_sMWKw2oFv_JGhqpeRQJ5IaMK8f35W4qUyqUjULygJc0BXGqiRt15-uCYoRMqCM7Nb-9tozBwpQ3Jj39Id7vdYRrlZvY5S4QKU8lEz8Y3d0-Ta2Ef_T1wdvlqd"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-mono text-[10px] px-2 py-1 uppercase font-bold">ELITE</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Neural Processor</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">1,100 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Next-gen compute unit for personal augmentations. 400% overclock capability.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel rounded-xl overflow-hidden group hover:border-primary transition-all duration-500">
+<div class="relative aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A pair of sleek, futuristic tactical goggles with a glowing cyan heads-up display reflecting in the lenses. The frame is made of carbon fiber with a 1px glowing neon border. The background is a rainy, dark city street at night with blurred red and blue lights. The mood is adrenaline-fueled and exclusive, targeting the digital vanguard audience with its artifact-like quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAskyE_90YaYoIrRCJYj_Y1vv_XQz9_YklDpy0YXYYDD5qhwmcSC71daa7_ZJaKXQNHgmcetqpTFOA2TAMcV1nDH4rk8wouH6PC_cbMsLWU9IM1Cc7rdeXqcbdUHR7e-Im9JrO1c51Pk1KgJ6XbOpD1001-wTw9NkgIHMI5UPKLX757qxy3yuMMb0ZLCUYGnFYEIauoSeAjZcVJbhzBeQNT5hnVzLqPXAHUNUVYS2XaVOYnA8JAU-LiOhE98afkAPv_jZLKLB8-2Tv"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-mono text-[10px] px-2 py-1 uppercase font-bold">ELITE</div>
+</div>
+<div class="p-unit-4 flex flex-col gap-2">
+<div class="flex justify-between items-start">
+<h3 class="font-headline-md text-[18px] uppercase tracking-tight group-hover:text-primary transition-colors">Tactical Visor</h3>
+<span class="font-label-mono text-secondary-fixed text-[16px] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)]">980 NSG</span>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant line-clamp-2">Integrated HUD with thermal and digital signal decryption. Anti-glare coating included.</p>
+<button class="w-full mt-2 py-3 border border-secondary-fixed text-secondary-fixed font-label-mono uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:neon-glow-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Add to Cart
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-unit-12 bg-surface-container-lowest border-t border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-unit-8 max-w-max-width mx-auto">
+<div class="font-headline-md text-primary tracking-widest uppercase">NEO-SHOGUN</div>
+<div class="flex gap-unit-8 flex-wrap justify-center">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Privacy Protocol</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Dispatch Status</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Neural Support</a>
+</div>
+<div class="font-label-mono text-[10px] text-on-surface-variant opacity-50">
+                © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-secondary-fixed/20 shadow-[0_-4px_24px_rgba(0,238,252,0.15)] flex justify-around items-center h-unit-12 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-mono text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed drop-shadow-[0_0_5px_rgba(0,219,233,0.8)] active:scale-90 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-mono text-[10px] uppercase">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-mono text-[10px] uppercase">Missions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-mono text-[10px] uppercase">Profile</span>
+</a>
+</nav>
+<!-- FAB (Contextual for Shop) -->
+<button class="fixed bottom-24 right-6 md:bottom-12 md:right-12 bg-primary text-on-primary w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:neon-glow-primary active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</button>
+</body></html>

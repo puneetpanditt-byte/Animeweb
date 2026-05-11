@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO-SHOGUN | Neural Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-container": "#480064",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "error-container": "#93000a",
+                        "primary-container": "#ff5357",
+                        "on-surface-variant": "#e9bcb9",
+                        "inverse-primary": "#bf0024",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-bright": "#3a393a",
+                        "on-primary": "#68000e",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "tertiary": "#ebb2ff",
+                        "on-background": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#002022",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "primary-fixed-dim": "#ffb3af",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5f3e3d",
+                        "on-tertiary": "#520071",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410006",
+                        "on-surface": "#e5e2e3",
+                        "surface-tint": "#ffb3af",
+                        "on-secondary-container": "#00686f",
+                        "secondary-fixed": "#7df4ff",
+                        "background": "#131314",
+                        "outline": "#b08784",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "secondary": "#d3fbff",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdad8",
+                        "on-primary-container": "#5c000b",
+                        "tertiary-container": "#ce5dff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#930019",
+                        "on-secondary": "#00363a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#00eefc",
+                        "on-tertiary-fixed": "#320047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-8": "32px",
+                        "unit-1": "4px",
+                        "base": "4px",
+                        "max-width": "1440px",
+                        "unit-2": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-glow-red {
+            box-shadow: 0 0 15px rgba(255, 83, 87, 0.4), 0 0 30px rgba(255, 83, 87, 0.2);
+        }
+        .neon-glow-cyan {
+            box-shadow: 0 0 15px rgba(0, 238, 252, 0.4), 0 0 30px rgba(0, 238, 252, 0.2);
+        }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 179, 175, 0.2);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 240, 255, 0.05) 50%);
+            background-size: 100% 4px;
+        }
+        .particle-bg {
+            background-image: radial-gradient(circle, rgba(255,179,175,0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen overflow-x-hidden">
+<!-- Main Content Container -->
+<main class="relative w-full min-h-screen flex flex-col md:flex-row">
+<!-- Left Side: Cinematic Anime Visual -->
+<section class="hidden md:flex relative w-1/2 h-screen overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A cinematic, high-fidelity digital illustration of a futuristic samurai standing amidst a storm of digital embers. The character wears dark obsidian armor with glowing red circuitry and a tattered crimson cape fluttering in the wind. The atmosphere is dark and moody, lit by intense flashes of cyan and red neon light. The overall aesthetic is a premium cyberpunk anime style, featuring sharp lines, deep shadows, and a sense of technological superiority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH1e2nS7GVrTX7VOgZQXsnG8RBcvWN2KdiFr-R_N56mmv8o4G5ZgAW142HeSQEtxyXuWrHY4-nRiLAY9IsMUnktyDXwJyVPH3qDopENdlnuWebqwpMlDi6rn44mz798osldXe2UmADgqh26WpP2ABKs0Sle1WoE6XiO1cK7TzTtT2PwzTyOBMJd6_ByZJ7XaRxxXSWa19zwSznFCwedFzQK7fi9SiC6AFFrSRWj2sobvC0TWV4FO2fCPKWbtV0pKxuja8sM6xlLpsn"/>
+<!-- Overlay Gradients -->
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-background/90"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<!-- Branding Overlay -->
+<div class="absolute bottom-unit-12 left-margin-desktop z-10">
+<h1 class="font-headline-lg text-display-xl text-primary drop-shadow-[0_0_20px_rgba(255,179,175,0.8)] tracking-tighter">
+                    NEO-SHOGUN
+                </h1>
+<p class="font-label-mono text-label-mono text-secondary-fixed mt-unit-2 tracking-[0.3em] uppercase">
+                    Neural Authentication Protocol v.4.0
+                </p>
+</div>
+<!-- HUD Elements -->
+<div class="absolute top-unit-8 left-margin-desktop flex gap-unit-4 opacity-50">
+<div class="h-1 w-24 bg-primary"></div>
+<div class="h-1 w-8 bg-secondary-fixed"></div>
+<div class="h-1 w-4 bg-primary"></div>
+</div>
+</section>
+<!-- Right Side: Authentication Form -->
+<section class="w-full md:w-1/2 min-h-screen flex items-center justify-center p-margin-mobile md:p-unit-12 relative z-20 particle-bg">
+<!-- Mobile Branding -->
+<div class="md:hidden absolute top-unit-8 left-margin-mobile">
+<span class="font-headline-md text-primary font-bold tracking-tighter">NEO-SHOGUN</span>
+</div>
+<!-- Neural Login Form Container -->
+<div class="glass-panel w-full max-w-[480px] p-unit-8 md:p-unit-12 rounded-xl border-l-4 border-l-primary shadow-2xl relative">
+<!-- Scanline Effect Overlay -->
+<div class="absolute inset-0 pointer-events-none scanline opacity-20 rounded-xl"></div>
+<header class="mb-unit-8">
+<div class="flex items-center gap-unit-2 mb-unit-1">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="lock_open">lock_open</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Neural Login</h2>
+</div>
+<p class="text-on-surface-variant font-body-md">Establish secure neural link to the mainframe.</p>
+</header>
+<form class="space-y-unit-4">
+<!-- Email/ID Input -->
+<div class="space-y-unit-1 group">
+<label class="font-label-mono text-label-mono text-primary uppercase tracking-widest block">Neural Identifier</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest/50 border-b-2 border-surface-variant text-on-surface py-unit-4 px-unit-2 focus:border-secondary-fixed focus:ring-0 transition-all duration-300 outline-none placeholder:text-surface-variant font-label-mono" placeholder="USER_ID@NEO_SHOGUN" type="text"/>
+<span class="absolute right-unit-2 bottom-unit-4 material-symbols-outlined text-surface-variant group-focus-within:text-secondary-fixed transition-colors" data-icon="fingerprint">fingerprint</span>
+</div>
+</div>
+<!-- Password Input -->
+<div class="space-y-unit-1 group">
+<label class="font-label-mono text-label-mono text-primary uppercase tracking-widest block">Encryption Key</label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest/50 border-b-2 border-surface-variant text-on-surface py-unit-4 px-unit-2 focus:border-secondary-fixed focus:ring-0 transition-all duration-300 outline-none placeholder:text-surface-variant font-label-mono" placeholder="••••••••••••" type="password"/>
+<span class="absolute right-unit-2 bottom-unit-4 material-symbols-outlined text-surface-variant group-focus-within:text-secondary-fixed transition-colors" data-icon="key">key</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between py-unit-2">
+<label class="flex items-center gap-unit-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-surface-variant bg-surface-container text-primary focus:ring-primary/50 transition-all" type="checkbox"/>
+<span class="font-label-mono text-label-mono text-on-surface-variant group-hover:text-on-surface">Keep Session Live</span>
+</label>
+<a class="font-label-mono text-label-mono text-secondary-fixed hover:text-primary transition-colors underline decoration-secondary-fixed/30 underline-offset-4" href="#">Forgot Protocol?</a>
+</div>
+<!-- Primary Login Button -->
+<button class="w-full py-unit-4 bg-primary text-on-primary font-headline-md text-[18px] uppercase tracking-tighter hover:bg-primary-container active:scale-95 transition-all duration-300 neon-glow-red relative overflow-hidden group">
+<span class="relative z-10 flex items-center justify-center gap-unit-2">
+                            Initialize Link
+                            <span class="material-symbols-outlined text-[18px]" data-icon="bolt">bolt</span>
+</span>
+<div class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12"></div>
+</button>
+<!-- Divider -->
+<div class="flex items-center gap-unit-4 py-unit-4">
+<div class="h-[1px] flex-1 bg-surface-variant/50"></div>
+<span class="font-label-mono text-[10px] text-surface-variant uppercase tracking-[0.2em]">External Networks</span>
+<div class="h-[1px] flex-1 bg-surface-variant/50"></div>
+</div>
+<!-- Social Login -->
+<button class="w-full py-unit-4 border border-secondary-fixed/30 bg-transparent text-secondary-fixed font-label-mono text-label-mono flex items-center justify-center gap-unit-3 hover:bg-secondary-fixed/10 transition-all duration-300 group">
+<svg class="w-5 h-5 group-hover:drop-shadow-[0_0_8px_rgba(125,244,255,0.5)]" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="currentColor"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="currentColor"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="currentColor"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="currentColor"></path>
+</svg>
+                        Google Neural Login
+                    </button>
+</form>
+<footer class="mt-unit-8 text-center">
+<p class="font-body-md text-on-surface-variant">
+                        New Operator? 
+                        <a class="text-primary font-label-mono font-bold ml-unit-2 hover:underline decoration-primary/50 underline-offset-4" href="#">Register_Profile</a>
+</p>
+</footer>
+</div>
+<!-- Footer Small -->
+<div class="absolute bottom-unit-4 left-0 right-0 text-center">
+<p class="font-label-mono text-[10px] text-surface-variant uppercase tracking-widest">
+                    © 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.
+                </p>
+</div>
+</section>
+</main>
+<!-- Floating Background HUD Elements -->
+<div class="fixed top-20 right-10 w-32 h-32 border border-primary/10 rounded-full animate-pulse pointer-events-none hidden lg:block"></div>
+<div class="fixed bottom-20 left-10 w-48 h-48 border border-secondary-fixed/10 rounded-lg rotate-45 animate-pulse pointer-events-none hidden lg:block"></div>
+</body></html>

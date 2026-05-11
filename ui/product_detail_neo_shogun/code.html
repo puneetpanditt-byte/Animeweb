@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO-SHOGUN | GHOST OF THE UCHIHA - ARTIFACT #001</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353436",
+                    "inverse-surface": "#e5e2e3",
+                    "on-tertiary-container": "#480064",
+                    "on-tertiary-fixed-variant": "#74009f",
+                    "error-container": "#93000a",
+                    "primary-container": "#ff5357",
+                    "on-surface-variant": "#e9bcb9",
+                    "inverse-primary": "#bf0024",
+                    "surface-container-low": "#1c1b1c",
+                    "surface-bright": "#3a393a",
+                    "on-primary": "#68000e",
+                    "tertiary-fixed-dim": "#ebb2ff",
+                    "tertiary": "#ebb2ff",
+                    "on-background": "#e5e2e3",
+                    "surface-container-high": "#2a2a2b",
+                    "primary": "#ffb3af",
+                    "surface": "#131314",
+                    "on-secondary-fixed": "#002022",
+                    "secondary-fixed-dim": "#00dbe9",
+                    "primary-fixed-dim": "#ffb3af",
+                    "surface-container": "#201f20",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#5f3e3d",
+                    "on-tertiary": "#520071",
+                    "error": "#ffb4ab",
+                    "on-primary-fixed": "#410006",
+                    "on-surface": "#e5e2e3",
+                    "surface-tint": "#ffb3af",
+                    "on-secondary-container": "#00686f",
+                    "secondary-fixed": "#7df4ff",
+                    "background": "#050505",
+                    "outline": "#b08784",
+                    "on-secondary-fixed-variant": "#004f54",
+                    "secondary": "#d3fbff",
+                    "inverse-on-surface": "#313031",
+                    "tertiary-fixed": "#f8d8ff",
+                    "surface-container-highest": "#353436",
+                    "on-error": "#690005",
+                    "primary-fixed": "#ffdad8",
+                    "on-primary-container": "#5c000b",
+                    "tertiary-container": "#ce5dff",
+                    "surface-dim": "#131314",
+                    "on-primary-fixed-variant": "#930019",
+                    "on-secondary": "#00363a",
+                    "surface-container-lowest": "#0e0e0f",
+                    "secondary-container": "#00eefc",
+                    "on-tertiary-fixed": "#320047",
+                    "primary-accent": "#FF0033",
+                    "secondary-accent": "#00F0FF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit-4": "16px",
+                    "unit-12": "48px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "unit-8": "32px",
+                    "unit-1": "4px",
+                    "base": "4px",
+                    "max-width": "1440px",
+                    "unit-2": "8px"
+            },
+            "fontFamily": {
+                    "label-mono": ["Space Mono"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Space Grotesk"],
+                    "headline-lg-mobile": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #050505; color: #e5e2e3; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .glass { background: rgba(18, 18, 20, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255, 0, 51, 0.2); }
+        .neon-glow-red { box-shadow: 0 0 15px rgba(255, 0, 51, 0.4), 0 0 30px rgba(255, 0, 51, 0.2); }
+        .neon-glow-cyan { box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), 0 0 30px rgba(0, 240, 255, 0.2); }
+        .scanline { background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 2px, 3px 100%; pointer-events: none; }
+        .neural-zoom:hover img { transform: scale(1.1); filter: contrast(1.1) brightness(1.2); }
+        .hud-line { height: 1px; background: linear-gradient(90deg, transparent, #00F0FF, transparent); }
+        .stepped-bar { display: flex; gap: 2px; }
+        .stepped-segment { height: 8px; flex: 1; background: #353436; }
+        .stepped-segment.active { background: #00F0FF; box-shadow: 0 0 8px #00F0FF; }
+    </style>
+</head>
+<body class="dark selection:bg-primary-accent selection:text-white">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit-4 max-w-max-width mx-auto">
+<div class="flex items-center gap-unit-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(255,179,175,0.6)]">NEO-SHOGUN</span>
+<nav class="hidden md:flex gap-unit-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Artifacts</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-mono text-label-mono text-primary border-b-2 border-primary pb-1" href="#">Drops</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Vault</a>
+</nav>
+</div>
+<div class="flex items-center gap-unit-4">
+<button class="p-2 hover:bg-surface-variant/50 transition-all duration-300 rounded-full scale-95 active:scale-90">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/50 transition-all duration-300 rounded-full scale-95 active:scale-90">
+<span class="material-symbols-outlined text-primary">shopping_bag</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/50 transition-all duration-300 rounded-full scale-95 active:scale-90">
+<span class="material-symbols-outlined text-primary">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop pt-unit-12 pb-unit-12 relative">
+<!-- Background Dust Particles Simulation (Visual only) -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+<div class="absolute top-3/4 left-1/3 w-1 h-1 bg-primary-accent rounded-full animate-pulse"></div>
+<div class="absolute top-1/2 right-1/4 w-1 h-1 bg-secondary-accent rounded-full animate-pulse"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-unit-12">
+<!-- Left Side: Product Gallery -->
+<div class="lg:col-span-7 flex flex-col gap-unit-4">
+<div class="glass rounded-xl overflow-hidden relative neural-zoom aspect-[4/5] md:aspect-[16/9] group">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out" data-alt="A cinematic, high-detail wide shot of a legendary anime warrior figure standing amidst jagged obsidian rocks. The figure wears dark red crimson samurai armor with intricate weathering and cracks. Intense red lightning energy crackles around the character against a dark, moody background of swirling shadows and smoke. The lighting is dramatic and low-key with a powerful red bloom effect that evokes a high-stakes cyberpunk atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCobyBwla_TDNzYZ5Fe69oqHyhjMlpgDenWUPPDeds4XfRkm_HTkSRTPdqa5AG7wD5y_LM2AtkS1ORuYjCQQ5iaceLIzcGdCGnGnJM7lZsCdJ-KjopSJ8J0Z3UMY698SI2orqMZ6JuFAkPs558GhQR3ooiiCAUcnmA6ETB43FwlGh8pKeCewbzNBZPmmRGOser5BxWvMx52CGbldzFthIKGU8smKxfRR_npXo4tncJq8LUJIFeUqfbTqkRnoWQP8NLJ4exalxp8nrWF"/>
+<div class="absolute inset-0 scanline opacity-30"></div>
+<div class="absolute bottom-unit-4 left-unit-4 px-unit-2 py-unit-1 glass border-primary/50 text-primary-accent font-label-mono text-[10px] uppercase tracking-widest">
+                        // NEURAL_LINK: ACTIVE
+                    </div>
+</div>
+<div class="grid grid-cols-4 gap-unit-4">
+<div class="glass aspect-square rounded-lg overflow-hidden border-primary/20 hover:border-primary-accent transition-all cursor-pointer">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="Close up macro shot of the weathered crimson samurai armor of an anime collectible figure. The texture shows metallic scratches and glowing red cracks under cinematic low lighting. Cyberpunk aesthetic with deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpjbvfcmbhTKEed-zaCD51BEucgvXLw_IW-Zc7GGLtjtKY_r0ayWTL4xcrgbtzqDPUFPqPtgbnhFVTj-mSSNXnzya6BJsgPVAY--UuMFMoJN4LrvPHTKxPsbOaOmvwNUIjHDBM25KlrZ0Lp_ugPyFBAFIhv8JiaanPMAK4IiKEQkNM33qKzCwhpL5z8Mu8-NfY4hEWXSIZuo2AlPNboVtQGwZu4i5pHUgtpsbF5a7vv4s22txhuLjz9AU1Wc6qeGSQQxWymN-M1bet"/>
+</div>
+<div class="glass aspect-square rounded-lg overflow-hidden border-primary/20 hover:border-primary-accent transition-all cursor-pointer">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="A side profile of a high-end anime collectible figure showcasing long flowing black hair and glowing red eyes. The figure is shrouded in dark atmospheric smoke with red electrical discharges. Sharp focus, high contrast lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI7IpRh-WlfRgRXBBRSMdkr_LRCgrhGO80OiJgy4haq_Gd1k6JwHa8JSxcwpLCaF_-SrJsA-f2KqaMw4nnQ2n06wzQYqNJHwp17UX8Ub7DYQ3Hqki1TqT9xr6v27F35zUM0VtwCohJjYmHVvywOwqFETuIYXCGzl0HNUKM6RlMTnwurfenLGcCIFXrHgPStQthQw0L7ETGIv0TsClyK8CozyIbe8FV5RLG5vvo2Vga0rV94Vc6-95cvIA01-uHhluNcDE_saKWo3Vz"/>
+</div>
+<div class="glass aspect-square rounded-lg overflow-hidden border-primary/20 hover:border-primary-accent transition-all cursor-pointer">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all" data-alt="The packaging box for the limited edition NEO-SHOGUN artifact. A sleek matte black box with metallic red foil typography and a holographic security seal. High-end streetwear aesthetic presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-ADlEu_GebGUOD6-auvuZfdMn0iuTjA76afPI1lD0axcgFpJXsPHd0MF4zpXQAh7vHwEta4se45OuYHYhAwImvizy-RsTATlvzRkXNaQbi0vBiGehBs_ink1NhGA6r0d8cxHsHcVScZiDwgo9bCbJDeLUmzpt9jxtaRzBi1KTMxrQRW3QEvSe_6UaqDc5rGTPy0CvxBbwFIuykpR9n2qZf4RG6axzCMNIUx3OukP1fxq5OBCIyZWs9AQH5T5p37BRFpgHAIwLvXji"/>
+</div>
+<div class="glass aspect-square rounded-lg overflow-hidden border-primary/20 hover:border-primary-accent transition-all cursor-pointer flex items-center justify-center bg-surface-container">
+<span class="font-label-mono text-primary text-headline-md">+12</span>
+</div>
+</div>
+</div>
+<!-- Right Side: Product Actions & HUD Stats -->
+<div class="lg:col-span-5 flex flex-col gap-unit-8">
+<div>
+<div class="flex items-center gap-unit-2 mb-unit-1">
+<span class="bg-primary-accent text-white font-label-mono text-[10px] px-2 py-0.5 rounded-sm uppercase tracking-widest">Limited Edition</span>
+<span class="text-secondary-fixed font-label-mono text-[10px] uppercase">Artifact #001</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight">GHOST OF THE UCHIHA</h1>
+<div class="flex items-center gap-unit-4 mt-unit-2">
+<div class="flex gap-1 text-secondary-accent">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<span class="font-label-mono text-on-surface-variant text-[12px] underline cursor-pointer hover:text-secondary-fixed transition-colors">4.8 (124 REVIEWS)</span>
+</div>
+</div>
+<div class="glass p-unit-8 rounded-xl relative overflow-hidden">
+<div class="flex justify-between items-end mb-unit-8">
+<div>
+<span class="font-label-mono text-on-surface-variant text-[10px] uppercase tracking-widest block mb-unit-1">Exchange Value</span>
+<span class="font-headline-lg text-primary-accent drop-shadow-[0_0_8px_rgba(255,0,51,0.4)]">₹84,500</span>
+</div>
+<div class="text-right">
+<span class="font-label-mono text-error text-[10px] uppercase block mb-unit-1">Neural Stock</span>
+<span class="font-label-mono text-on-surface text-[14px]">08 / 100 UNITS</span>
+</div>
+</div>
+<div class="flex flex-col gap-unit-4">
+<button class="w-full bg-primary-accent hover:bg-on-primary-container text-white font-headline-md py-unit-4 rounded-lg transition-all duration-300 neon-glow-red uppercase tracking-widest active:scale-95">
+                            BUY NOW
+                        </button>
+<button class="w-full border border-secondary-accent/50 text-secondary-accent font-label-mono py-unit-4 rounded-lg hover:bg-secondary-accent/10 transition-all duration-300 uppercase tracking-widest flex items-center justify-center gap-unit-2 group active:scale-95">
+                            ADD TO NEURAL CART
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+<!-- HUD Stats -->
+<div class="mt-unit-12 border-t border-surface-variant pt-unit-8 flex flex-col gap-unit-4">
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-on-surface-variant text-[10px] uppercase">Rarity Rank</span>
+<span class="font-label-mono text-primary text-[10px]">ULTRA_RARE [S]</span>
+</div>
+<div class="flex flex-col gap-unit-1">
+<div class="flex justify-between font-label-mono text-[9px] uppercase text-on-surface-variant">
+<span>Artifact Integrity</span>
+<span>98%</span>
+</div>
+<div class="stepped-bar">
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment active"></div>
+<div class="stepped-segment"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Lore Section -->
+<div class="flex flex-col gap-unit-4">
+<div class="flex items-center gap-unit-2">
+<div class="h-[2px] w-8 bg-primary-accent"></div>
+<h3 class="font-label-mono text-primary-accent text-[12px] uppercase tracking-[0.2em]">Codex Lore</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Forged in the heart of the Eternal Night, Artifact #001 represents the pinnacle of NEO-SHOGUN's neural-sculpting technology. Every edge of the crimson plating has been etched with ancient sigils that pulse with a faint light when exposed to dark UV environments.
+                    </p>
+<div class="hud-line"></div>
+</div>
+</div>
+</div>
+<!-- Bento Grid: Related Artifacts -->
+<section class="mt-unit-12">
+<div class="flex items-center justify-between mb-unit-8">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest">Related Artifacts</h2>
+<a class="font-label-mono text-primary hover:text-secondary-fixed transition-colors text-[12px]" href="#">VIEW ALL VAULT CONTENT</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-unit-4">
+<!-- Related Card 1 -->
+<div class="glass rounded-xl overflow-hidden group cursor-pointer">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stylized anime figure in bright cyan cybernetic armor, standing in a dynamic action pose. High-tech HUD graphics are superimposed over the image. Electric blue neon lighting on a dark metallic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9mniO05QO6VcMKIRGhQKWtGh0Ukc21BXfgH5TeSNw3qVOAXxYV7NQJ3bqq2xhDxkWBZwB5tFudsXPTI7ibLM0u5Ay7rxkBAMfLwa1bQ1OB2xsftYTBUxoaebLpyG6YT3bV2-CQjzD7JiX0Xmv39i2igWpoSEv4rYPwMwTeC2mrrL8sR0dPATGjjTf8vFAza-_kcU14OJrmbtTbYpPFQ8zG_egUur75cIr0yq16Rjiid13v2NVZZf8U7VW76Ui5LsEnzX95cEDvsjK"/>
+<div class="absolute top-2 right-2 glass px-2 py-0.5 rounded font-label-mono text-[9px] text-primary">NEW</div>
+</div>
+<div class="p-4 border-t border-primary/20">
+<span class="font-label-mono text-[10px] text-on-surface-variant">SERIES_BLUE</span>
+<h4 class="font-body-md font-bold text-on-surface group-hover:text-primary transition-colors">THUNDER CHASER</h4>
+<span class="font-label-mono text-primary-accent mt-2 block">₹52,000</span>
+</div>
+</div>
+<!-- Related Card 2 -->
+<div class="glass rounded-xl overflow-hidden group cursor-pointer">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Close up portrait of a futuristic anime head sculpture with metallic hair and white glowing optics. Cinematic lighting with purple and teal rim lights. Minimalist high-tech sculpture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjck94CzH79p1G0Z9-gTxuWRAn9DKTSpURbd74e9AMwW7CGtqqKfdmJbmGX7hVUX3_pEDTZ3KBPlMsS1JeNUisStU60dzxnAHFwCTa0glCEMkU11Qc4nsQ5v5JZgpCtBfz1Zf3RNycjJG8nKkfylbWPJ5vrfec4RHzKFI-RVBh0pkp9RDq4zcNJwtFXlIUHvOD4JVtNsPM6CxKSBNUsszjKPQe84v5n0OBe9AsaOyrUaEI7IjiECITAOzG28tw4bVXViU-eicMyzeq"/>
+</div>
+<div class="p-4 border-t border-primary/20">
+<span class="font-label-mono text-[10px] text-on-surface-variant">CORE_NEURAL</span>
+<h4 class="font-body-md font-bold text-on-surface group-hover:text-primary transition-colors">ZENITH UNIT</h4>
+<span class="font-label-mono text-primary-accent mt-2 block">₹45,000</span>
+</div>
+</div>
+<!-- Related Card 3 -->
+<div class="glass rounded-xl overflow-hidden group cursor-pointer">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Macro photography of a collection of high-tech cyberpunk accessories including glowing cards and metallic cubes. Neon red and blue ambient lighting. Tech-noir atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChHrRN3b9cz3tajEvbpg4p4L9sjrH5_hNJd8BecpK5b9nMdu527fOk5zDlEjX57RbhoCrbxXN-ptSwVE3ASd8DXZsMWkWFASiOhHFOWHxCxIH3lnKGoDC0PhYSGDiI25cHK6ZM0Yo1EZjdi0pBf9rCkJOPHt7uIfj90Rm6eE_kirstY2DVKMjxcfYPipcLmQndMrFbXZN72hlmdZViHy-9RA5jYUVxKVcE-umnFWRx51gch15wO4zKnvSRrIBVYqKC_rUEFDT1wFeU"/>
+</div>
+<div class="p-4 border-t border-primary/20">
+<span class="font-label-mono text-[10px] text-on-surface-variant">GEAR_PROTO</span>
+<h4 class="font-body-md font-bold text-on-surface group-hover:text-primary transition-colors">VOID CORE</h4>
+<span class="font-label-mono text-primary-accent mt-2 block">₹12,800</span>
+</div>
+</div>
+<!-- Related Card 4 -->
+<div class="glass rounded-xl overflow-hidden group cursor-pointer">
+<div class="h-64 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract cinematic art of a warrior silhouette standing before a massive glowing portal. Dark background with intense orange and yellow light spill. Dramatic epic composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Jzk2hHjgZ3KDnP5N_kEfKjqrg_L3dh-T9Y2_rAh_FsnCbxjeIC4-MFZPuaqkO75DCFO_wVXHUO9onufoj_7cDraaPVrwZR0fREGeR9mYgHNu6MoXSe_wawn8xDNdfjwvK_-HjnhCbFNsNSeEGk24GD8hwCV6ghr0eE3eQIlaOXY7ptZpZLmrvT99v78hV3xZ0yD4CL-1kT_Gri0vzUeSLvccuAsZft8QlqOgT3_6aK0K5JxTHqwJI6bqRyBvpj1nnjhdZFBIQMOo"/>
+<div class="absolute top-2 right-2 bg-on-tertiary-container px-2 py-0.5 rounded font-label-mono text-[9px] text-tertiary">RARE</div>
+</div>
+<div class="p-4 border-t border-primary/20">
+<span class="font-label-mono text-[10px] text-on-surface-variant">LEGEND_SERIES</span>
+<h4 class="font-body-md font-bold text-on-surface group-hover:text-primary transition-colors">CRIMSON OMEN</h4>
+<span class="font-label-mono text-primary-accent mt-2 block">₹120,000</span>
+</div>
+</div>
+</div>
+</section>
+<!-- User Reviews Section -->
+<section class="mt-unit-12">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-widest mb-unit-8">Feedback Protocol</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-8">
+<div class="glass p-unit-4 rounded-xl border-secondary-accent/20">
+<div class="flex items-center justify-between mb-unit-4">
+<div class="flex items-center gap-unit-2">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-primary/30 flex items-center justify-center font-label-mono text-primary text-[10px]">US_04</div>
+<div>
+<h5 class="font-label-mono text-on-surface text-[12px] uppercase">OPERATIVE_RAIJIN</h5>
+<span class="font-label-mono text-[9px] text-on-surface-variant opacity-50 uppercase">Verified Purchase // Sector 7</span>
+</div>
+</div>
+<div class="flex gap-0.5 text-secondary-accent">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant italic">"The level of detail on the battle damage is unmatched. The red LEDs pulse exactly like the neural sync in the anime. A true masterpiece for the collection."</p>
+</div>
+<div class="glass p-unit-4 rounded-xl border-secondary-accent/20">
+<div class="flex items-center justify-between mb-unit-4">
+<div class="flex items-center gap-unit-2">
+<div class="w-10 h-10 rounded-full bg-surface-variant border border-primary/30 flex items-center justify-center font-label-mono text-primary text-[10px]">US_19</div>
+<div>
+<h5 class="font-label-mono text-on-surface text-[12px] uppercase">GHOST_WALKER</h5>
+<span class="font-label-mono text-[9px] text-on-surface-variant opacity-50 uppercase">Verified Purchase // Neural Tokyo</span>
+</div>
+</div>
+<div class="flex gap-0.5 text-secondary-accent">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-[14px] text-on-surface-variant italic">"Fastest dispatch status I've experienced. Packaging arrived in pristine condition. This is Artifact #001 for a reason. 10/10 sync rate."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-unit-12 bg-surface-container-lowest border-t border-surface-variant mt-unit-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-unit-8 max-w-max-width mx-auto">
+<div class="flex flex-col items-center md:items-start gap-unit-2">
+<span class="font-headline-md text-primary tracking-widest uppercase">NEO-SHOGUN</span>
+<p class="font-label-mono text-[10px] text-on-surface-variant">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-unit-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Privacy Protocol</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Dispatch Status</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Neural Support</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-secondary-fixed/20 shadow-[0_-4px_24px_rgba(0,238,252,0.15)] flex justify-around items-center h-unit-12 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-mono text-label-mono uppercase text-[8px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary-fixed drop-shadow-[0_0_5px_rgba(0,219,233,0.8)] active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-mono text-label-mono uppercase text-[8px]">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-mono text-label-mono uppercase text-[8px]">Missions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-secondary-fixed transition-opacity active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="font-label-mono text-label-mono uppercase text-[8px]">Profile</span>
+</a>
+</nav>
+</body></html>

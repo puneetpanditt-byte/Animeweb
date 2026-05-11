@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEO-SHOGUN | Neural Dispatch</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353436",
+                        "inverse-surface": "#e5e2e3",
+                        "on-tertiary-container": "#480064",
+                        "on-tertiary-fixed-variant": "#74009f",
+                        "error-container": "#93000a",
+                        "primary-container": "#ff5357",
+                        "on-surface-variant": "#e9bcb9",
+                        "inverse-primary": "#bf0024",
+                        "surface-container-low": "#1c1b1c",
+                        "surface-bright": "#3a393a",
+                        "on-primary": "#68000e",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "tertiary": "#ebb2ff",
+                        "on-background": "#e5e2e3",
+                        "surface-container-high": "#2a2a2b",
+                        "primary": "#ffb3af",
+                        "surface": "#131314",
+                        "on-secondary-fixed": "#002022",
+                        "secondary-fixed-dim": "#00dbe9",
+                        "primary-fixed-dim": "#ffb3af",
+                        "surface-container": "#201f20",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#5f3e3d",
+                        "on-tertiary": "#520071",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#410006",
+                        "on-surface": "#e5e2e3",
+                        "surface-tint": "#ffb3af",
+                        "on-secondary-container": "#00686f",
+                        "secondary-fixed": "#7df4ff",
+                        "background": "#131314",
+                        "outline": "#b08784",
+                        "on-secondary-fixed-variant": "#004f54",
+                        "secondary": "#d3fbff",
+                        "inverse-on-surface": "#313031",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-highest": "#353436",
+                        "on-error": "#690005",
+                        "primary-fixed": "#ffdad8",
+                        "on-primary-container": "#5c000b",
+                        "tertiary-container": "#ce5dff",
+                        "surface-dim": "#131314",
+                        "on-primary-fixed-variant": "#930019",
+                        "on-secondary": "#00363a",
+                        "surface-container-lowest": "#0e0e0f",
+                        "secondary-container": "#00eefc",
+                        "on-tertiary-fixed": "#320047"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit-4": "16px",
+                        "unit-12": "48px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "unit-8": "32px",
+                        "unit-1": "4px",
+                        "base": "4px",
+                        "max-width": "1440px",
+                        "unit-2": "8px"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["Space Mono"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Space Grotesk"],
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #050505;
+            color: #e5e2e3;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 179, 175, 0.15);
+        }
+        .neon-glow-red:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 51, 0.4), 0 0 40px rgba(255, 0, 51, 0.2);
+        }
+        .neon-glow-cyan:focus-within {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+        .scanline {
+            background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+        .particle-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: radial-gradient(circle at 50% 50%, rgba(255, 0, 51, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<div class="particle-bg"></div>
+<div class="scanline fixed inset-0 z-[60] opacity-10 pointer-events-none"></div>
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-unit-4 max-w-max-width mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary drop-shadow-[0_0_8px_rgba(255,179,175,0.6)]">
+                NEO-SHOGUN
+            </div>
+<nav class="hidden md:flex gap-unit-8 items-center">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Artifacts</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Collections</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Drops</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Vault</a>
+</nav>
+<div class="flex items-center gap-unit-4">
+<button class="p-unit-2 text-primary hover:bg-surface-variant/50 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</button>
+<button class="p-unit-2 text-primary hover:bg-surface-variant/50 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+<button class="p-unit-2 text-primary hover:bg-surface-variant/50 transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-unit-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Hero Header Section -->
+<div class="lg:col-span-12 mb-unit-8">
+<p class="font-label-mono text-label-mono text-secondary-fixed mb-unit-2">// NEURAL_LINK_ESTABLISHED</p>
+<h1 class="font-display-xl text-display-xl tracking-tighter uppercase mb-unit-4">Neural Dispatch</h1>
+<div class="h-unit-1 w-unit-12 bg-primary drop-shadow-[0_0_10px_#ffb3af]"></div>
+</div>
+<!-- Form Section -->
+<div class="lg:col-span-7 glass-panel p-unit-8 rounded-lg relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+<h2 class="font-headline-md text-headline-md mb-unit-8 text-primary uppercase">Transmission Protocol</h2>
+<form class="space-y-unit-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-unit-8">
+<div class="group">
+<label class="font-label-mono text-label-mono text-secondary-fixed/70 uppercase mb-unit-2 block">Operator Alias</label>
+<input class="w-full bg-surface-container-low/50 border-0 border-b border-secondary-fixed/30 text-on-surface focus:ring-0 focus:border-secondary-fixed transition-all duration-300 p-unit-2 font-body-md neon-glow-cyan" placeholder="GHOST_01" type="text"/>
+</div>
+<div class="group">
+<label class="font-label-mono text-label-mono text-secondary-fixed/70 uppercase mb-unit-2 block">Neural ID (Email)</label>
+<input class="w-full bg-surface-container-low/50 border-0 border-b border-secondary-fixed/30 text-on-surface focus:ring-0 focus:border-secondary-fixed transition-all duration-300 p-unit-2 font-body-md neon-glow-cyan" placeholder="ENCRYPTED@NEO.NET" type="email"/>
+</div>
+</div>
+<div>
+<label class="font-label-mono text-label-mono text-secondary-fixed/70 uppercase mb-unit-2 block">Subject Directive</label>
+<select class="w-full bg-surface-container-low/50 border-0 border-b border-secondary-fixed/30 text-on-surface focus:ring-0 focus:border-secondary-fixed transition-all duration-300 p-unit-2 font-body-md appearance-none">
+<option>GENERAL_ENQUIRY</option>
+<option>VAULT_ACCESS_ISSUE</option>
+<option>ARTIFACT_CALIBRATION</option>
+<option>NEURAL_SUPPORT</option>
+</select>
+</div>
+<div>
+<label class="font-label-mono text-label-mono text-secondary-fixed/70 uppercase mb-unit-2 block">Data Payload</label>
+<textarea class="w-full bg-surface-container-low/50 border-0 border-b border-secondary-fixed/30 text-on-surface focus:ring-0 focus:border-secondary-fixed transition-all duration-300 p-unit-2 font-body-md neon-glow-cyan resize-none" placeholder="INITIATE MESSAGE SEQUENCE..." rows="4"></textarea>
+</div>
+<button class="w-full md:w-auto bg-[#FF0033] text-on-background px-unit-12 py-unit-4 rounded-none font-headline-md text-[18px] uppercase tracking-widest transition-all duration-300 active:scale-95 neon-glow-red flex items-center justify-center gap-unit-2" type="submit">
+<span>Send Transmission</span>
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+<!-- Map & Info Section -->
+<div class="lg:col-span-5 flex flex-col gap-gutter">
+<!-- Location Map -->
+<div class="glass-panel overflow-hidden rounded-lg h-[300px] relative group">
+<img class="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 transition-all duration-700" data-alt="A highly detailed cinematic render of a futuristic cyberpunk city map displayed on a glowing holographic interface. The map features intricate grid lines, obsidian dark surfaces, and neon red and cyan light trails indicating transport routes. The overall mood is high-tech and atmospheric with soft particle effects and digital distortions typical of a premium anime aesthetic." data-location="Tokyo-3 Sector" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR9njj6hiulbwve6n4SAhn9BwuESn7tNIpDsTUTlDxI3yvHzeEBfhRfoMCP65XMMUvbe-gq7AhWdcWpKPW5diz_QpCI6lSj3E0lrOwWZsn-MrLERaTab_uonlsJ7lecpQ48ZVJGjMtS_nFxfN4aIRPsTlXSy7ixasvob-RPPmjWabemxaje8c3VuTBZP7ngjVthmZplWkWzkKDnKvn7asBvQ7BYngeg63wdho99rR2CactRcGJ-7cRiIFTiPFeJXH6Fij4FT5oXLMp"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#050505] to-transparent opacity-60"></div>
+<div class="absolute bottom-unit-4 left-unit-4">
+<p class="font-label-mono text-label-mono text-primary">// HQ_COORDINATES</p>
+<p class="font-headline-md text-[20px]">SHIBUYA DISTRICT, NEO-TOKYO</p>
+</div>
+</div>
+<!-- Neural Links -->
+<div class="glass-panel p-unit-8 rounded-lg">
+<h3 class="font-label-mono text-label-mono text-secondary-fixed uppercase mb-unit-6 tracking-widest">Neural Links</h3>
+<div class="grid grid-cols-2 gap-unit-4">
+<a class="flex items-center gap-unit-2 p-unit-4 border border-surface-variant hover:border-secondary-fixed hover:bg-secondary-fixed/10 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-secondary-fixed group-hover:scale-110" data-icon="hub">hub</span>
+<span class="font-label-mono text-label-mono">X_TERMINAL</span>
+</a>
+<a class="flex items-center gap-unit-2 p-unit-4 border border-surface-variant hover:border-secondary-fixed hover:bg-secondary-fixed/10 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-secondary-fixed group-hover:scale-110" data-icon="stream">stream</span>
+<span class="font-label-mono text-label-mono">DISPATCH_HUB</span>
+</a>
+<a class="flex items-center gap-unit-2 p-unit-4 border border-surface-variant hover:border-secondary-fixed hover:bg-secondary-fixed/10 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-secondary-fixed group-hover:scale-110" data-icon="terminal">terminal</span>
+<span class="font-label-mono text-label-mono">DEV_NODES</span>
+</a>
+<a class="flex items-center gap-unit-2 p-unit-4 border border-surface-variant hover:border-secondary-fixed hover:bg-secondary-fixed/10 transition-all duration-300 group" href="#">
+<span class="material-symbols-outlined text-secondary-fixed group-hover:scale-110" data-icon="sensors">sensors</span>
+<span class="font-label-mono text-label-mono">INSTA_FEED</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container/90 backdrop-blur-lg border-t border-secondary-fixed/20 shadow-[0_-4px_24px_rgba(0,238,252,0.15)] flex justify-around items-center h-unit-12">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-mono text-[10px] uppercase">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-mono text-[10px] uppercase">Shop</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-mono text-[10px] uppercase">Missions</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-label-mono text-[10px] uppercase">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-unit-12 bg-surface-container-lowest border-t border-surface-variant mt-unit-12">
+<div class="max-w-max-width mx-auto flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-unit-8">
+<div class="flex flex-col items-center md:items-start gap-unit-2">
+<div class="font-headline-md text-primary tracking-widest uppercase">NEO-SHOGUN</div>
+<p class="font-label-mono text-label-mono text-on-surface-variant opacity-50">© 2024 NEO-SHOGUN INDUSTRIES. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-unit-8">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Privacy Protocol</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-secondary-fixed hover:underline decoration-secondary-fixed transition-all duration-300" href="#">Dispatch Status</a>
+<a class="font-label-mono text-label-mono text-primary font-bold" href="#">Neural Support</a>
+</div>
+</div>
+</footer>
+</body></html>
